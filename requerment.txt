@@ -1,0 +1,3 @@
+pymysql
+djiango
+django-rest-swagger
