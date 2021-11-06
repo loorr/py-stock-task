@@ -1,3 +1,5 @@
+import json
+
 from django.db import models
 
 
@@ -11,13 +13,22 @@ class BaseModel(models.Model):
 
 
 class StockList(BaseModel):
-    stock_id = models.CharField(max_length=10, unique=True)
+    # stock_id = models.CharField(max_length=10, unique=True)
+    # market_symbol = models.CharField(max_length=10)
+    # symbol = models.CharField(max_length=10)
+    # name = models.CharField(max_length=10)
+    # full_name = models.CharField(max_length=10)
+    # start_date = models.DateField()
+    # end_date = models.DateField()
+    stock_id = models.CharField(max_length=10)
     market_symbol = models.CharField(max_length=10)
     symbol = models.CharField(max_length=10)
     name = models.CharField(max_length=10)
     full_name = models.CharField(max_length=10)
-    start_date = models.DateField()
-    end_date = models.DateField()
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField()
+
+
 
     class Meta:
         db_table = 'stock_list'

@@ -18,11 +18,13 @@ from django.urls import path
 from django.conf.urls import url
 
 from WebTaskFramework.controller import pageOne
-from AkshareApp import views as akshareViews
-
+from AkshareApp.controller import views as akshareViews
+from WebTaskFramework.controller.docs import schema_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('test/', pageOne.hello, name='home'),
     url("akshare/", akshareViews.akshare_hello),
+    url("get-stock-item", akshareViews.get_stock_item),
+    url(r'^docs/$', schema_view, name="schema_view"),
 ]

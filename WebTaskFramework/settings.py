@@ -1,6 +1,7 @@
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -13,7 +14,7 @@ SECRET_KEY = 'django-insecure-wugk@3yjae9itg+4*+9rzzjb^c_zyenqlq92f1*ln(s0_m6w2p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -25,8 +26,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'AkshareApp'
 ]
+
+REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': 'WebTaskFramework.config.exception_handler.global_exception_handler',
+    # 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -1,3 +1,4 @@
 pymysql
 djiango
-django-rest-swagger
+django-rest-swagger-2.2.0
+akshare
