@@ -1,14 +1,11 @@
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse
 
-from AkshareApp.model.models import StockList
-import AkshareApp.controller.vo.StockInfoVo as StockInfoVo
+from AkshareApp.service import CommonDataService
 from CommonInfra.BaseResponse import ok
 
 
-def akshare_hello(request):
-    sotck = StockList(stock_id="SZ00002", market_symbol="SZ", symbol="00002", name="测试")
-    sotck.save()
-    return HttpResponse('Hello World')
+def akshare_index(request):
+    return ok("hello akshare")
 
 
 def get_stock_item(request):
@@ -16,3 +13,8 @@ def get_stock_item(request):
     # result = StockInfoVo.SotckInfoVo(instance=sotck, many=True)
     data = True
     return ok(data)
+
+
+def stock_info_a_code_name(request):
+    CommonDataService.stock_info_a_code_name()
+    return ok(True)

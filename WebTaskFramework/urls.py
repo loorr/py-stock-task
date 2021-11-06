@@ -14,17 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf.urls import url
 
 from WebTaskFramework.controller import pageOne
-from AkshareApp.controller import views as akshareViews
 from WebTaskFramework.controller.docs import schema_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('test/', pageOne.hello, name='home'),
-    url("akshare/", akshareViews.akshare_hello),
-    url("get-stock-item", akshareViews.get_stock_item),
     url(r'^docs/$', schema_view, name="schema_view"),
+    url(r'^akshare/', include("AkshareApp.urls"))
 ]
