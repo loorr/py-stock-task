@@ -1,5 +1,3 @@
-from django.http import HttpResponse
-
 from AkshareApp.service import CommonDataService
 from CommonInfra.BaseResponse import ok
 
@@ -9,10 +7,7 @@ def akshare_index(request):
 
 
 def get_stock_item(request):
-    # sotck = StockList.objects.all()
-    # result = StockInfoVo.SotckInfoVo(instance=sotck, many=True)
-    data = True
-    return ok(data)
+    return ok(True)
 
 
 def stock_info_a_code_name(request):

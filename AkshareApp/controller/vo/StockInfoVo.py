@@ -1,7 +1,9 @@
 from rest_framework import serializers
 
+
 class BaseVo(serializers.Serializer):
     pass
+
 
 class SotckInfoVo(BaseVo):
     stock_id = serializers.CharField(max_length=10)
